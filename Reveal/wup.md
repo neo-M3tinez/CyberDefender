@@ -18,13 +18,14 @@
 
 + đầu tiên ta sẽ phân tích nguồn của file thuộc os nào => file file.dmp
 
-  ![image](https://github.com/user-attachments/assets/920c58e6-bae8-4980-ba9e-a7883f7240a3)
+ ![361132733-920c58e6-bae8-4980-ba9e-a7883f7240a3](https://github.com/user-attachments/assets/2f191328-9611-49af-8107-1afa8e90b53f)
 
 + tiếp theo ta có thể list thông tin tiến trình của hệ thống bằng câu lệnh windows.pslist 
 
 + để phát hiện trích xuất mã độc ta sẽ dùng plugin windows.malfind
 
-![image](https://github.com/user-attachments/assets/0c06cb2c-37fa-4f1f-91d3-6a12d0327722)
+![361133445-0c06cb2c-37fa-4f1f-91d3-6a12d0327722](https://github.com/user-attachments/assets/d8bbe791-46dd-4165-a657-c2e48dcaca54)
+
 
 => process powershell có vẻ đang add 1 số value vào memory , powershell PAGE_EXECUTE_READWRITE quyền này có thể chứa dữ liệu hoặc mã đang được thực thi
 
@@ -34,7 +35,8 @@
 
 + như câu hỏi trên ta list được ppid của powershell => windows.pslist
 
-   ![image](https://github.com/user-attachments/assets/55b10e01-db8f-4174-8fd9-a39fa1c122d0)
+![361145716-55b10e01-db8f-4174-8fd9-a39fa1c122d0](https://github.com/user-attachments/assets/609f26d3-ea1e-43c0-99c3-cec78dcd810e)
+
 
 => Anwser: 4120
 
@@ -42,7 +44,7 @@
 
 + xác định được malware execute ta sẽ sử dụng : vol -f file.dmp windows.cmdline --pid 3692
 
-  ![image](https://github.com/user-attachments/assets/c237dcb7-f3a2-4f17-90b5-a47cc53f2c12)
+  ![361146819-c237dcb7-f3a2-4f17-90b5-a47cc53f2c12](https://github.com/user-attachments/assets/a678bb4d-9d30-4111-ab1d-18f7b4d1b539)
 
 => có 1 file dll đang ở dir \davwwwroot
 
@@ -66,7 +68,8 @@
 
         vol -f file.dmp userassist
 
-![image](https://github.com/user-attachments/assets/ef073c97-d969-4105-aff4-dcc04756154c)
+![361147867-ef073c97-d969-4105-aff4-dcc04756154c](https://github.com/user-attachments/assets/dd72b1ad-4ea9-4fe5-8dff-8bde6b52b5df)
+
 
 => Anwser: elon 
 
@@ -74,6 +77,7 @@
 
 + xác định địa chỉ ip remote là 45.9.74.32
 
-  ![image](https://github.com/user-attachments/assets/282195e3-445f-41ee-a49a-0debffe3069a)
+ ![361148176-282195e3-445f-41ee-a49a-0debffe3069a](https://github.com/user-attachments/assets/62ba90c7-ceee-431a-8d2b-c16fd7865458)
+
 
 => Anwser: STRELASTEALER
