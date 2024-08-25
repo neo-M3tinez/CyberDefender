@@ -13,7 +13,7 @@
 
 => 2 ip này đang giao tiếp với nhau nhiều nhất để sâu hơn ta sẽ check tcp connection của nó 
 
-  ![image](https://github.com/user-attachments/assets/75c7980a-0cef-460e-908e-e91f1a26e3d4)
+  ![360390665-75c7980a-0cef-460e-908e-e91f1a26e3d4](https://github.com/user-attachments/assets/a236ae88-ba56-411a-9c79-bafa6419fd22)
 
 + để điều tra ta có attacker có vẻ đang khai thác 1 số lỗ hổng như : sql injection , file uploads , fuzz dns
 
@@ -21,7 +21,8 @@
 
 => đây là file NVri2vhp.php đã upload script có vẻ đang tạo kết nối tcp listen tại host 111.224.250.131 => file upload vuln 
 
-![image](https://github.com/user-attachments/assets/635e933f-4da7-4366-9337-c97a9a8714e0)
+![360454285-635e933f-4da7-4366-9337-c97a9a8714e0](https://github.com/user-attachments/assets/59e33316-11de-4f94-918b-8a901dd5819d)
+
 
 => Anwser: 111.224.250.131
 
@@ -29,7 +30,8 @@
 
 => dùng iplocation lookup : check với ip 111.224.250.131
 
-![image](https://github.com/user-attachments/assets/04d75a0b-17b4-490e-ae0f-121d18d21f21)
+![360455544-04d75a0b-17b4-490e-ae0f-121d18d21f21](https://github.com/user-attachments/assets/b8bca8d9-6e87-4d74-9b2b-2687931be210)
+
 
 => City: Shijiazhuang
 
@@ -37,7 +39,7 @@
 
 + xác định vị trí của script bị inject vào param có thể gây ra lỗ hổng
 
-![image](https://github.com/user-attachments/assets/4dd94621-6c89-463f-98e1-aed216e92575)
+![360498767-4dd94621-6c89-463f-98e1-aed216e92575](https://github.com/user-attachments/assets/41f8e5bc-deab-435c-9077-d8989e792d6d)
 
 => ta có thể thấy vị trí trên URI đó là search.php?search=' đang test lỗ hổng sql => respond 500 server 
 
@@ -47,7 +49,8 @@
 
 + xác định lần tấn công đầu tiên trả về respond 200 OK => /search.php?search=book%20and%201=1;%20--%20-
 
-![image](https://github.com/user-attachments/assets/f9250720-75b7-43c2-b3e0-ec432d8a36d1)
+![360512547-f9250720-75b7-43c2-b3e0-ec432d8a36d1](https://github.com/user-attachments/assets/239d67b9-9533-4258-971b-46b9e97a9737)
+
 
 => Anwser: /search.php?search=book%20and%201=1;%20--%20- 
 
@@ -55,7 +58,8 @@
 
 => câu này hiểu xem sqli có thể extract URi có thê web server available databases injection vào param   
 
-![image](https://github.com/user-attachments/assets/081be448-c9da-4fe0-a13b-a2bc8b7acda3)
+![360478838-081be448-c9da-4fe0-a13b-a2bc8b7acda3](https://github.com/user-attachments/assets/39a01523-4fb3-4d5b-8ec7-a7b7d62feecd)
+
 
 ```/search.php?search=book%27%20UNION%20ALL%20SELECT%20NULL%2CCONCAT%280x7178766271%2CJSON_ARRAYAGG%28CONCAT_WS%280x7a76676a636b%2Cschema_name%29%29%2C0x7176706a71%29%20FROM%20INFORMATION_SCHEMA.SCHEMATA--%20-```
 
@@ -65,7 +69,9 @@
 
 + table name chứa users data là customers truy vấn ra tài khoản của website 
 
-![image](https://github.com/user-attachments/assets/80ba8f67-c0c6-4fee-b95a-0ece62281721)
+![360523069-80ba8f67-c0c6-4fee-b95a-0ece62281721](https://github.com/user-attachments/assets/741a96c4-7fab-41e5-bd08-d5947610006e)
+
+
 
     book' UNION ALL SELECT NULL,CONCAT(0x7178766271,JSON_ARRAYAGG(CONCAT_WS(0x7a76676a636b,address,email,first_name,id,last_name,phone)),0x7176706a71) FROM bookworld_db.customers-- -
 
@@ -75,7 +81,8 @@
 
 + attacker đã tìm kiếm trong directory admin nơi mà chứa các thông tin mật như username, password của user cũng như admin
 
-![image](https://github.com/user-attachments/assets/2408f3e6-56c7-4458-915a-6e64b5c5e180)
+![360528050-2408f3e6-56c7-4458-915a-6e64b5c5e180](https://github.com/user-attachments/assets/bca18977-1187-4c1a-bad7-523160da228a)
+
 
 => Answer: /admin/
 
@@ -83,7 +90,7 @@
 
 > network Minner tập trung vào việc trích xuất và phân bố những dữ liệu cụ thể từ các gói tin
 
-![image](https://github.com/user-attachments/assets/f5cf8cf7-fe47-4891-95f8-16266c1b8ef2)
+![361099906-f5cf8cf7-fe47-4891-95f8-16266c1b8ef2](https://github.com/user-attachments/assets/38398ee8-34d7-45e3-843f-503fec2015eb)
 
 > ta thấy credentials atttacker là  username admin và password admin123! được sử dụng cuối cùng và sau đó kẻ tấn công đã truy cập được vào
 
@@ -93,6 +100,7 @@
 
 + Như mình đã tìm được ở Q1 thì file được upload lên là NVri2vhp.php nhằm tạo backdoor để sử dụng các câu lệnh từ xa
 
-![image](https://github.com/user-attachments/assets/a01b58ed-bbfe-4935-b943-e7f99b0e8285)
+![361100068-a01b58ed-bbfe-4935-b943-e7f99b0e8285](https://github.com/user-attachments/assets/ab53ef67-c72c-4d63-a713-d80bb5cf3160)
+
 
 => Answer: NVri2vhp.php
