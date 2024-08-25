@@ -9,11 +9,13 @@
 
 + Recon: phân tích những host tham gia traffic mạng => conversations
 
-  ![image](https://github.com/user-attachments/assets/4cda4abe-2dc3-4036-b363-67396b89cf33)
+  ![360735827-4cda4abe-2dc3-4036-b363-67396b89cf33](https://github.com/user-attachments/assets/62331667-2f1e-44c8-9d5f-97a965566db9)
+
 
 => conversations tại ip 142.190.21.92 -> 134.209.197.3 đang lưu lượng gói tin đang là nhiều nhất 
 
-![image](https://github.com/user-attachments/assets/4b684627-7985-4a61-826f-89a2bbee2583)
+![360744015-4b684627-7985-4a61-826f-89a2bbee2583](https://github.com/user-attachments/assets/abf25a52-56dd-4e5e-a372-634c78fa1fb6)
+
 
 + following conversations của 2 ip ta check được nó đang tiếp lập kết nối đến openwire protocol
 
@@ -41,7 +43,8 @@
 
 + như bài trước server found vulnerbility ở port 61616 dịch truyền tin nhắn giữa client và message broker  như Apache ActiveMQ là bên tạo ra giao thức Openwire 
 
-![image](https://github.com/user-attachments/assets/0dee008a-52c5-4368-a92a-d68a5971c571)
+![360793703-0dee008a-52c5-4368-a92a-d68a5971c571](https://github.com/user-attachments/assets/9e5d8445-218b-47ec-886e-d74e0b3b4517)
+
 
 => Anwser: Apache ActiveMQ
 
@@ -49,7 +52,7 @@
 
 + xác định C2 server tìm attack ip host 2 ta kiểm tra được ip 128.199.52.72 
 
-![image](https://github.com/user-attachments/assets/0ddadeb9-276b-4456-8cb7-f70c8063eba5)
+![360796579-0ddadeb9-276b-4456-8cb7-f70c8063eba5](https://github.com/user-attachments/assets/83c4b3f2-185a-4592-8266-130390fbb363)
 
 => như hình trên có vẻ ip attacker giao tiếp với ip victim để connect qua port 80 http để truyền 1 file mã độc gì đó có thể là Docker file 
 
@@ -59,7 +62,8 @@
 
 + sau khi check qua giao thức truyền file http ta thấy ip 128.199.52.72 đang gửi 1 file docker => có thể là file reverse shell 
 
-![image](https://github.com/user-attachments/assets/9232c172-b82a-4adf-b8ce-fffb10a92ab3)
+![360796339-9232c172-b82a-4adf-b8ce-fffb10a92ab3](https://github.com/user-attachments/assets/b007c9cd-a80a-4129-8e57-3e16e634fdad)
+
 
 => sau khi download về ta check virus total đây là 1 file shell code name docker chắc được generate ra từ metasploit 
 
@@ -69,7 +73,8 @@
 
 + class java được gọi bởi tệp XML để chạy mã khai thác là class = java.lang.ProcessBuilder
 
-![image](https://github.com/user-attachments/assets/6d1ad4dd-3b07-41e5-a7d2-00ea51a9c35a)
+![360935220-6d1ad4dd-3b07-41e5-a7d2-00ea51a9c35a](https://github.com/user-attachments/assets/13888f02-356a-445f-853e-a664bf20ec14)
+
 
 => Anwser: java.lang.ProcessBuilder
 
@@ -78,8 +83,7 @@
 * Câu hỏi có đề cập đến CVE nên mình đã search về CVE thì nó chính là viết tắt của Common Vulnerabilities and Exposures, ngắn gọn thì đây là một danh sách các lỗ hổng bảo mật
 * Mình đã dựa vào các đặc điểm của đoạn mã để search về loại CVE này
 
-![image](https://github.com/user-attachments/assets/8906386e-8034-4659-9889-0abf15e9efc6)
-
+![360936304-8906386e-8034-4659-9889-0abf15e9efc6](https://github.com/user-attachments/assets/c3b55d8e-1bb7-460e-97a5-90c3e2a80a50)
 
 * Mình đã tìm thấy github [link](https://github.com/rootsecdev/CVE-2023-46604 "Link Github") và [link](https://github.com/X1r0z/ActiveMQ-RCE "ActiveMQ-RCE")
 * Và mình đã tìm thấy lỗ hổng đó là **CVE-2023-46604** RCE reverse shell Apache ActiveMQ
@@ -94,7 +98,7 @@
 ### Solution 
 * Mình đã vào đọc các link ở trong github đó và tìm thấy thông tin class java được sử dụng
 
-![image](https://github.com/user-attachments/assets/3f6036e2-de6f-496b-b3e5-2cac88c155a7)
+![360935938-3f6036e2-de6f-496b-b3e5-2cac88c155a7](https://github.com/user-attachments/assets/a4055599-938f-4d92-9d86-b18764bd06ab)
 
 
 => Answer: BaseDataStreamMarshaller.createThrowable
