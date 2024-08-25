@@ -8,11 +8,12 @@
 
 + attacker xác định qua conversations port của ip attacker là 117.11.88.124
 
-  ![image](https://github.com/user-attachments/assets/7a13e7e8-83a4-43a5-974e-5095b29b656d)
+  ![360945199-7a13e7e8-83a4-43a5-974e-5095b29b656d](https://github.com/user-attachments/assets/c01a73e6-9884-4769-85fb-029fb1cc00e4)
+
 
 => xác định xong bên connect là attacker đến victim location ta sẽ check trên Internet protocol trên detail 
 
-![image](https://github.com/user-attachments/assets/c79940d2-6a43-4b22-b2c6-2c23b44a70b0)
+![360945586-c79940d2-6a43-4b22-b2c6-2c23b44a70b0](https://github.com/user-attachments/assets/6856c653-c147-472c-aa84-ee153a2b15ac)
 
 => Anwser : city_Tianjin
 
@@ -22,7 +23,8 @@
 
 + gói tin GET sẽ chứa dữ liệu của ip attacker source đang send request đến victim
 
-  ![image](https://github.com/user-attachments/assets/02d4cec8-eede-4a93-9455-003b5c35f3ba)
+ ![360947075-02d4cec8-eede-4a93-9455-003b5c35f3ba](https://github.com/user-attachments/assets/ae8c36e0-886d-4c6d-920f-3334bd2c4e1b)
+
 
 => ip attacker đang vào trang shoporoma với user-agent
 
@@ -34,7 +36,8 @@
 
 + file upload thường sẽ sử dụng method post để upload file
 
-![image](https://github.com/user-attachments/assets/352630a3-167c-4a2a-946c-b08c4b9f3b73)
+![360957563-352630a3-167c-4a2a-946c-b08c4b9f3b73](https://github.com/user-attachments/assets/676cb14a-c45e-4e88-a73b-d025d0ebfd52)
+
 
 => ta có thể thấy file đã trả về upload successful nên ta có thể nhận định file name = image.jpg.php có thể nó bypass extension filter format 
 
@@ -46,7 +49,7 @@
 
 + với file đã uploads ta có thể xác định nó lưu trữ ở mục /uploads/ nhưng ta cần phải check cả gói tin vì có thư mục cha đằng trước nó
 
-  ![image](https://github.com/user-attachments/assets/1cf0a1e0-6d0c-45d2-8810-7017a3fca8ad)
+ ![360959327-1cf0a1e0-6d0c-45d2-8810-7017a3fca8ad](https://github.com/user-attachments/assets/3a1c4f21-88a6-4876-9852-3a9bc45504ce)
 
 => path /reviews/uploads/image.jpg.php => /reviews/uploads/ đang lưu trữ image.jpg.php
 
@@ -58,7 +61,7 @@
 
 + nhận định port 8080 thường là port dự phòng do attacker tạo ra để tránh phát hiện hệ thống giám sát trên các port thông thường và giảm xung đột
 
-  ![image](https://github.com/user-attachments/assets/70024d7d-4de5-433a-9bf3-cc3b46ec81bf)
+  ![360961262-70024d7d-4de5-433a-9bf3-cc3b46ec81bf](https://github.com/user-attachments/assets/4bd79f33-f089-4b01-9509-354aefb5cab8)
 
 => có vẻ sau khi uploads shell code attacker đã thực thi 1 số command trên port lắng nghe là 8080 
 
