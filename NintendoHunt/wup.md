@@ -13,7 +13,8 @@
 
 + check file process trên txt
 
-![image](https://github.com/user-attachments/assets/bcf39b8d-263b-4b8f-94e0-3a315da4b6ea)
+![361231648-bcf39b8d-263b-4b8f-94e0-3a315da4b6ea](https://github.com/user-attachments/assets/58e04de0-051f-4d24-aa1a-5e5f9891f688)
+
 
 => ta thấy có 1 process bất thường là ở svchost.exe.exe
 
@@ -23,11 +24,13 @@
 
 + grep các tiến trình dựa trên ppid 4824
 
-  ![image](https://github.com/user-attachments/assets/bb79d5a6-138c-493b-bfd1-a9ba055d59e9)
+![361243207-bb79d5a6-138c-493b-bfd1-a9ba055d59e9](https://github.com/user-attachments/assets/563ea25e-5045-4456-9a6e-776a66524672)
+
 
 => ta có thể dump từng pid liên quan để check 
 
-![image](https://github.com/user-attachments/assets/d518f071-190f-45d5-a080-bf100a9d8245)
+![361242908-d518f071-190f-45d5-a080-bf100a9d8245](https://github.com/user-attachments/assets/f66ff7d6-0362-4e2b-b4c9-7ed03b6f6d6b)
+
 
 + dump tiến trình pid 8560 :  ``vol -f memdump.mem windows.pslist --pid 8560 --``
 
@@ -48,7 +51,8 @@ vol -f memdump.mem windows.memmap.Memmap --pid 8560 --dump
 Sau khi dump ra thì mình được một file dump pid.8560.dmp, mình dùng strings trong linux để đọc file này, sau khi lướt một lúc thì mình tìm thấy một thông tin khả nghi là t.h.e fl.ag.is và một chuỗi có vẻ là base64, mình decode thì ra chuỗi 3a19697f29095bc289a96e4504679680, mình dùng cipher identifier thì đúng là md5
 
 
-![image](https://github.com/user-attachments/assets/89bc6b48-587f-458d-bb6e-a5a6f0902f1f)
+![361243705-89bc6b48-587f-458d-bb6e-a5a6f0902f1f](https://github.com/user-attachments/assets/058618b7-6f11-4fd3-98dc-0d8a2ea9ce7b)
+
 
 => Anwser: 3a19697f29095bc289a96e4504679680
 
