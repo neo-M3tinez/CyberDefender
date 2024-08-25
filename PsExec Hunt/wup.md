@@ -14,7 +14,8 @@
 
 > Xác định điểm nóng: Các địa chỉ IP có số lượng gói tin cao có thể là các điểm nóng trong mạng hoặc thiết bị đang chịu tải cao.
 
-![image](https://github.com/user-attachments/assets/a960cf01-0e0b-4ccd-8dd9-38edfa90032d)
+![361099808-a960cf01-0e0b-4ccd-8dd9-38edfa90032d](https://github.com/user-attachments/assets/8b004e5e-bdbf-4b0d-b2d9-7e103b482d4d)
+
 
 => địa chỉ ip 10.0.0.130 đang có số lượng gói tin lớn nên khả năng là máy attacker 
 
@@ -27,7 +28,7 @@
 
 + nhưng nhìn vào gói tin smb2 ta có thể thấy NTLMSSP (NT LAN Manager Security Support Provider) là giao thức xác thực của Windows, sử dụng ba bước (Negotiate, Challenge, Authenticate) để xác thực người dùng
 
-   ![image](https://github.com/user-attachments/assets/6640f3cc-ae28-40b6-a565-5f6a87010d01)
+  ![361159038-6640f3cc-ae28-40b6-a565-5f6a87010d01](https://github.com/user-attachments/assets/90d11bcc-c7a6-483a-953e-fd5bbd9b7b42)
 
 => Anwser: SALES-PC
 
@@ -35,7 +36,8 @@
 
 + tiếp tục khám phá ta tìm thấy được user trong gói này là username ssales
 
-  ![image](https://github.com/user-attachments/assets/fdeee967-e62d-473d-bf80-0e89f3ec4e6e)
+ ![361159746-fdeee967-e62d-473d-bf80-0e89f3ec4e6e](https://github.com/user-attachments/assets/a579de99-63f5-4b01-873a-be8c1ab6543c)
+
 
 => username: ssales 
 
@@ -43,7 +45,8 @@
 
 + sau khi attacker di chuyển qua mạng thì họ tiến hành tạo 1 file thực thi để attack vào target machine
 
-  ![image](https://github.com/user-attachments/assets/3e2938e8-edd3-4369-8b4c-59c16c7f8c14)
+![361160419-3e2938e8-edd3-4369-8b4c-59c16c7f8c14](https://github.com/user-attachments/assets/2ea6f5fe-43f2-4555-a29c-d50e730ea4b4)
+
 
 => Anwser: PSEXESVC.exe
 
@@ -65,11 +68,13 @@
 
 + conversations xác định điểm có lưu lương packet có số lượng nhiều thứ 2 trong traffic
 
-  ![image](https://github.com/user-attachments/assets/a134fd33-ef75-482c-8f30-5a7b9139d642)
+ ![361161757-a134fd33-ef75-482c-8f30-5a7b9139d642](https://github.com/user-attachments/assets/5862943b-ba4e-4aa5-ab41-d973cc1fbecf)
+
 
 + LLMNR (Link-Local Multicast Name Resolution) là một giao thức mạng được sử dụng để giải quyết tên máy tính trong một mạng cục bộ (link-local) mà không cần phải sử dụng DNS (Domain Name System)
 
-   ![image](https://github.com/user-attachments/assets/ea8ad27b-fdf7-4c74-b8e6-9b4aef20e4b1)
+![361161846-ea8ad27b-fdf7-4c74-b8e6-9b4aef20e4b1](https://github.com/user-attachments/assets/07c461ba-aff1-4033-8bec-d1b04b53d1e2)
+
 
 => Anwser: Marketing-PC
 
