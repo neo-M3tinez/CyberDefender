@@ -13,69 +13,6 @@
 
 > volatility là công cụ để phân tích bộ nhớ có thể trích xuất chi tiết thông tin từ file dump hoặc file mem
 
-         Phân Tích Tiến Trình:
-
-    pslist: Liệt kê các tiến trình đang chạy.
-    pstree: Hiển thị cây tiến trình.
-    psscan: Tìm tiến trình ẩn hoặc đã bị giết.
-    cmdline: Hiển thị dòng lệnh khởi động tiến trình.
-    dlllist: Liệt kê các DLL được nạp.
-
-      Phân Tích Mạng:
-      
-          netscan: Liệt kê kết nối mạng, socket, và cổng.
-          connscan: Tìm kết nối mạng bị ẩn.
-      
-      Phân Tích Registry:
-      
-          printkey: Trích xuất nội dung của một key Registry.
-          hivelist/hivescan: Liệt kê và quét các registry hive.
-      
-      Phân Tích File và Module:
-      
-          filescan: Tìm file trong bộ nhớ.
-          modscan: Tìm các module kernel.
-          handles: Hiển thị các handle mở.
-      
-      Phân Tích Bộ Nhớ Vật Lý:
-      
-          memmap: Hiển thị ánh xạ bộ nhớ của tiến trình.
-          vaddump/pagedump: Trích xuất bộ nhớ ảo và các trang bộ nhớ.
-      
-      Phân Tích Malware:
-      
-          malfind: Phát hiện và trích xuất mã độc.
-          apihooks: Phát hiện API bị hook.
-          yarascan: Quét mã độc bằng YARA rules.
-      
-      Phân Tích Crash Dumps:
-      
-          crashinfo: Phân tích và hiển thị thông tin từ crash dump.
-      
-      Phân Tích Tài Liệu và Khóa:
-      
-          hashdump/lsadump: Trích xuất hash mật khẩu và secret.
-          clipboard: Trích xuất nội dung clipboard.
-      
-      Phân Tích Bộ Nhớ Kernel:
-      
-          modules: Liệt kê các module kernel.
-          driverirp: Phân tích bảng IRP của driver.
-          ssdt: Hiển thị bảng SSDT, phát hiện hook kernel.
-      
-      Phân Tích Giao Diện Người Dùng:
-      
-          windows: Liệt kê các cửa sổ GUI.
-          deskscan: Quét để tìm desktop và cửa sổ bị ẩn.
-      
-      Phân Tích Hệ Thống Tập Tin:
-      
-          mftparser: Phân tích Master File Table (MFT).
-          timeliner: Tạo dòng thời gian các sự kiện.
-      
-      Phân Tích Hệ Thống Tạm Thời:
-      
-          iehistory/chromehistory: Trích xuất lịch sử duyệt web từ IE và Chrome.
 
 ## Q1: Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?
 
